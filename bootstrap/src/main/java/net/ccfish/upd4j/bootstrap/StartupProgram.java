@@ -1,7 +1,6 @@
 package net.ccfish.upd4j.bootstrap;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 import java.util.function.Supplier;
@@ -55,13 +54,6 @@ public class StartupProgram implements UpdateHandler {
                System.out.println("launch business");
                 try {
                     running = processHelper.startNewJavaProcess("-cp \".;business/*\"", "net.ccfish.upd4j.business.BusinessApplication");
-                    try (InputStream child_in = running.getInputStream()) {
-                        int c;
-                        while ((c = child_in.read()) != -1) {
-                            // System.out.println("kkk");
-                            System.out.print((char) c);
-                        }
-                    }
                 } catch (IOException e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
@@ -115,5 +107,9 @@ public class StartupProgram implements UpdateHandler {
     @Override
     public void stop() {
         System.out.println("stop");
+    }
+    
+    private int getRunningId() {
+        return 0;
     }
 }
