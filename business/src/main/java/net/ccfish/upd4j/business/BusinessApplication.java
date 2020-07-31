@@ -4,12 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.update4j.LaunchContext;
-import org.update4j.service.Launcher;
 
 @RestController
 @SpringBootApplication
-public class BusinessApplication implements Launcher {
+public class BusinessApplication  {
+    
+//    private ConfigurableApplicationContext ctx;
 
     public static void main(String[] args) throws Exception {
         System.out.println("BusinessApplication started");
@@ -18,12 +18,13 @@ public class BusinessApplication implements Launcher {
 
     @GetMapping("")
     public String helloworld() {
-        return "helloworld";
+        return "helloworld v14";
     }
 
-    @Override
-    public void run(LaunchContext context) {
-        System.out.println("BusinessApplication started");
-        SpringApplication.run(BusinessApplication.class);
-    }
+//    @Override
+//    public void run(LaunchContext context) {
+//        System.out.println("BusinessApplication started");
+//        ctx = SpringApplication.run(BusinessApplication.class);
+//    }
+    
 }
