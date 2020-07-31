@@ -1,0 +1,38 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>net.ccfish.upd4j</groupId>
+  <artifactId>upd4j-demo</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <modules>
+    <module>bootstrap</module>
+    <module>business</module>
+    <module>gen-config</module>
+  </modules>
+  <properties>
+    <root>F:\upd4j</root>
+    <target>${root}/target</target>
+    <config.location>${target}/config</config.location>
+  </properties>
+  
+  <dependencies>
+      <dependency>
+          <groupId>org.update4j</groupId>
+          <artifactId>update4j</artifactId>
+          <version>1.4.5</version>
+      </dependency>
+  </dependencies>
+    
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <release>9</release>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
